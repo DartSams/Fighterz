@@ -6,11 +6,17 @@ from constants import *
 
 #load images
 bg = pygame.transform.scale(pygame.image.load("assets/images/background/background.jpg"),(screen_width,screen_height))
+#sprite sheet containing all sprite animations
+warrior_sheet = pygame.image.load("assets/images/warrior/Sprites/warrior.png")
+wizard_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png")
 
+#each animation has different number of frames a total of 7 different animation with different number of frames
+warrior_animation_steps = [10,8,1,7,7,3,7]
+wizard_animation_steps = [8,8,1,8,8,3,7]
 
 #player instance profiles
-player1 = OOP.Fighter(win,100,300)
-player2 = OOP.Fighter(win,500,300)
+player1 = OOP.Fighter(win,100,300,warrior_data,warrior_sheet,warrior_animation_steps)
+player2 = OOP.Fighter(win,500,300,wizard_data,wizard_sheet,wizard_animation_steps)
 
 #assigns each player a enemy to fight 
 player1.enemy = player2
