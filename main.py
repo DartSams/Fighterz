@@ -9,9 +9,13 @@ bg = pygame.transform.scale(pygame.image.load("assets/images/background/backgrou
 
 
 #player instance profiles
-player1 = OOP.Fighter(win,300,400)
+player1 = OOP.Fighter(win,100,300)
+player2 = OOP.Fighter(win,500,300)
 
-player2 = OOP.Fighter(win,300,400)
+#assigns each player a enemy to fight 
+player1.enemy = player2
+player2.enemy = player1
+
 
 #game loop
 while run:
@@ -24,6 +28,9 @@ while run:
     player1.draw() #draws player to screen
     player2.draw()
     player1.move() #controls for player movement
+    #draw players health bars
+    player1.draw_healthbar(20,20,player1.max_health)
+    player2.draw_healthbar(480,20,player2.max_health)
     pygame.display.update()
     fps.tick(60)
 
