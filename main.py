@@ -16,7 +16,7 @@ wizard_animation_steps = [8,8,1,8,8,3,7]
 
 #player instance profiles
 player1 = OOP.Fighter(win,100,300,warrior_data,warrior_sheet,warrior_animation_steps)
-player2 = OOP.Fighter(win,500,300,wizard_data,wizard_sheet,wizard_animation_steps)
+player2 = OOP.Fighter(win,750,300,wizard_data,wizard_sheet,wizard_animation_steps)
 
 #assigns each player a enemy to fight 
 player1.enemy = player2
@@ -34,9 +34,10 @@ while run:
     player1.draw() #draws player to screen
     player2.draw()
     player1.move() #controls for player movement
+    # player2.move()
     #draw players health bars
     player1.draw_healthbar(20,20,player1.max_health)
-    player2.draw_healthbar(480,20,player2.max_health)
+    player2.draw_healthbar(750,20,player2.max_health)
     pygame.display.update()
     fps.tick(60)
 
